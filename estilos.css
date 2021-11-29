@@ -1,0 +1,229 @@
+@charset "UTF-8";
+
+@import url(); /*importando fontes externas. bastar colar a URL*/
+
+@font-face { /*importanto font salva no pc*/
+    font-family: 'idroid'; /*nome criado*/
+    src: url('fontes/idroid.otf') format('opentype'); /*endereço da fonte - formato*/
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*CONFIGURAÇÕES GLOBAIS - o código inteiro vai iniciar com essas configurações
+---essa configuração ajuda a configurar os outros blocos posteriormente---
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+*/
+
+/*
+USO DE VARIÁVEIS
+(pseudo-classe :root)
+:root {             PASTA RAÍZ DO DOCUMENTO
+    CRIANDO VARIÁVEIS E INCLUINDO VALORES
+    --cor-principal: #5ebd6;
+    --cordestaque: white;
+    --fonte-principal: Arial, Verdana, Helvetica, sans serif;
+    --fonte1: 'Android', sans-serif;
+}
+ATRIBUINTO AS VARIÁVEIS 
+body {
+    color: var(--cordestaque);
+}
+main {
+    font-family: var(--fonte-principal);
+
+*/
+
+body {
+    /*O SITE NÃO ESTÁ RESPONSIVO - não está se adaptando a telas diferentes*/
+    /*O SITE ESTÁ COM ROLAGEM LATERAL - não deve ter*/
+    background-color: rgb(228, 228, 245);
+    
+    padding: 0px;  
+
+    margin: 0px;   
+}
+
+.paragrafo { /*classe para configurar os paragrafos*/
+    text-align: justify;
+    text-indent: 40px; /*recuo/espaço no início do parágrafo*/
+    line-height: 25px; /*altura/espaçamento entre uma linha e outra*/
+}
+
+header {
+    background-image: linear-gradient(to bottom, blue, rgb(0, 0, 63)); /*degradê*/
+    /*background-color: rgb(26, 26, 180);*/
+    padding: 10px;    
+    padding-bottom: 0px;
+    /**/    
+}
+header > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    color: white;
+    text-align: center; 
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.404);   
+}
+
+header > p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+    max-width: 500px; /*largura da caixa do texto*/
+    text-align: center; /*texto centralizado na caixa*/
+
+    margin: auto; /*bloco do texto centralizada automaticamente*/
+
+    padding-top: 10px;
+    padding-bottom: 30px;   
+}
+
+/*TIRAR O NAV DE DENTRO DO HEADER - FEITO*/
+nav {
+    background-color: rgb(0, 0, 63);
+    padding: 10px;        
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.466);
+}
+
+nav > a { /*NÃO ESTÁ RESPPONSIVO*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+    
+    text-decoration: none; /*sem o sublinhado do link*/
+    padding: 10px 10px; /*distancia entre os menus*/
+}
+
+nav > a:hover { /*pseudo-classe hover*/
+    background-color: rgba(192, 192, 192, 0.616); /*o fundo do link muda de cor ao passar o mouse*/    
+}
+
+main {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.466);
+
+    min-width: 300px; /*largura minima*/
+    max-width: 800px; /*largura maxima*/
+    
+    margin: auto; /*margem automatica - centralizada*/
+    margin-bottom: 10px; /*margem inferior*/
+    
+    padding: 10px 30px;
+    border-radius: 0px 0px 8px 8px;
+}
+main img { /*as imagens no main, se ajustarão a largura maxima do bloco (main)*/
+    max-width: 100%;
+    margin: auto;
+}
+
+strong {
+    color: rgb(0, 0, 143);
+    
+}
+strong > a { /*link inicialmente sem decoração*/
+    text-decoration: none;
+}
+strong > a:hover { /*o link ficará sublinhado ao passar o mouse*/
+    text-decoration: underline;
+}
+
+article > h1 {
+    font-family: 'idroid';
+    font-size: 23px;
+    color: rgb(0, 0, 104);
+}
+
+
+
+/*div#android > img { /*configuração da imagem do androir
+    max-width: 100%; /*centraliza a imagem dentro da caixa do body, ocupando o tamanho maximo da largura
+}
+
+div#irina > img {
+    max-width: 100%;
+} 
+*/
+
+p#bugdroid > img {
+    max-width: 350px; /*o máximo que a imagem vai aumentar - de acordo com o tamanho da tela*/
+    display: block; /*imagem centralizada na caixa*/
+    margin: auto;
+}
+div.video { /*classe para configuração de vídeos*/
+    position: relative;
+    background-color: rgb(3, 3, 190);
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 58%; /*configurações do bloco onde está o vídeo*/
+}
+div.video > iframe { /*configuração do vídeo propriamente dito*/
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+.destaque{
+    background-image: linear-gradient(to right, rgb(226, 226, 255), transparent); /*fundo em degradê até ficar transparente*/
+    font-family: 'idroid' , Arial, Helvetica, sans-serif; /* vai ler primeiro fonte idroid*/ 
+    font-size: 20px;
+    font-weight: normal; /*torna a fonte noral - sem negrito*/
+    color: rgb(0, 0, 110);
+    padding-left: 6px;
+}
+
+aside {
+    background-color: rgb(219, 245, 255);
+    border-radius: 10px;
+    padding: 0px 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.253);
+}
+aside > h3 {
+    background-color: rgb(0, 0, 124);
+    color: white;
+    padding: 10px;
+    margin: 10px -10px 0px -10px; /*negativo faz a margem recuar*/
+    border-radius: 10px 10px 0px 0px;
+    
+}
+aside > ul {
+
+    list-style-position: inside; /*os marcadores ficam dentro do bloco onde está a ul*/
+    columns: 2; /*divide a lista em duas colunas*/
+}
+a.externo::after { /*classe que vai receber algo após*/
+    content: '\1F517'; /*o a vai receber um ícone após*/
+} 
+
+footer {
+    background-color: rgb(0, 0, 124);
+    text-align: center;
+    color: white;
+    
+    padding: 1px;
+}
+footer > p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;    
+}
+footer a {
+    color: white;
+    font-weight: bold; /*fonte em negrito*/
+    text-decoration: none; /*fonte sem decoração*/
+}
+footer a:hover {
+    color: silver;
+    text-decoration: underline;
+}
+
+
+
+
+
+
